@@ -1,4 +1,7 @@
-DEPLOY_DIR:=$(HOME)/repo/gitee/lsf
+# Added by xin
+# build the project in docker
+
+DEPLOY_DIR:=$(HOME)/repo/gitee/lsf/LiveStreamForward/zlm
 IMAGE:=lsf-ci
 
 .PHONY: all rebuild build deploy
@@ -6,7 +9,9 @@ all: build
 rebuild: clean build
 build: config compile
 deploy:
-	cp -rf release $(DEPLOY_DIR)/LiveStreamForward/
+	mkdir -p $(DEPLOY_DIR)/app
+	cp -f release/linux/Debug/MediaServer $(DEPLOY_DIR)/app/
+	cp -rf release/linux/Debug/www $(DEPLOY_DIR)/app/
 
 .PHONY: config compile clean
 config:
