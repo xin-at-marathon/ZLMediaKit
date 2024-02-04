@@ -1,7 +1,7 @@
 # Added by xin
 # build the project in docker
 
-DEPLOY_DIR:=$(HOME)/repo/gitee/lsf/LiveStreamForward/zlm
+DEPLOY_DIR:=$(HOME)/repo/gitee/lsf/forward/zlm
 IMAGE:=lsf-ci
 
 .PHONY: all rebuild build deploy
